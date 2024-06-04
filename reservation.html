@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Hashtag - Menu</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add styles for the navigation bar */
+        /* Add styles for the navigation bar */
+/* Add styles for the navigation bar */
+nav {
+    background-color: transparent;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+nav .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    color: black; /* Set default font color to black */
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: yellow; /* Change font color to yellow on hover */
+}
+
+
+
+        /* Styles for the menu items */
+        .menu-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            max-height: 200px; /* Adjust this value as needed */
+            object-fit: cover; /* Ensures the image covers the area without stretching */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        /* Quick review overlay styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .overlay-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+        }
+
+        .overlay-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 8px;
+        }
+
+        .overlay-content p {
+            margin-top: 10px;
+        }
+
+        .overlay-content .buy-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .overlay-content .buy-button:hover {
+            background-color:transparent;
+        }
+
+        /* Cart styles */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .cart-items {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .cart:hover .cart-items {
+            display: block;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px; /* Added margin for better spacing */
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px; /* Added margin for better spacing */
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            display: none;
+            color: green;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <img src="photos/cafelogo.jpeg" alt="Cafe Logo">
+        <h1>Ritesh Cafe</h1>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="contact.html">Contact</a>   
+</nav>
+<div class="container">
+    <h1>Reservation</h1>
+    <p>Our Cafe provides both online and offline table reservations for our customers.</p>
+    <form id="reservation-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="people">Number of people</label>
+            <input type="number" id="people" name="people" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <button class="submit-btn" type="submit">Reservation Now</button>
+    </form>
+    <p>Reservations are not final until confirmed by a call from restaurant staff when an email would be received.</p>
+    <div id="success-message">Reservation submitted successfully!</div>
+</div>
+
+<script>
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        var successMessage = document.getElementById('success-message');
+        successMessage.style.display = 'block'; // Show success message
+
+        // Hide the success message after 5 seconds
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+        // Here you can add code to actually submit the reservation details to a server
+    });
+</script>
+
+
+
+</body>
+</html>

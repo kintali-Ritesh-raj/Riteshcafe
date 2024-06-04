@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritesh Cafe - About Us</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add styles for the navigation bar */
+        nav {
+            background-color: transparent;
+            overflow: hidden;
+            color: black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        nav .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black; /* Set default font color to black */
+            text-align: center;
+            padding: 14px 25px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: yellow; /* Change font color to yellow on hover */
+        }
+
+        /* Styles for the about section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .about-content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-content button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .about-content button:hover {
+            background-color: #555;
+        }
+
+        .about-content .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .about-content .gallery-item {
+            flex-basis: calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .about-content .gallery-item img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about-content .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-content .gallery-item p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="photos/cafelogo.jpeg" alt="Cafe Logo">
+        <h1>Ritesh Cafe</h1>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="contact.html">Contact</a>
+    <!-- Add the cart here -->
+</nav>
+
+<div class="about-content">
+    <h1>About Us</h1>
+    <p>Ritesh Cafe is a place where passion for coffee meets a commitment to quality. Since our inception, we've been dedicated to sourcing the finest coffee beans, roasting them with care, and creating exceptional coffee experiences for our customers both in our cafes and online.</p>
+    <p>Our mission is simple: to share our love for coffee with the world. We take pride in every cup we serve, and we're thrilled to invite you to join us on this caffeinated journey.</p>
+   
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="photos/coffee1.jpeg" alt="Coffee 1">
+            <p>Single Origin Coffee</p>
+        </div>
+        <div class="gallery-item">
+            <img src="photos/coffee3.jpeg" alt="Coffee 2">
+            <p>Espresso</p>
+        </div>
+        <div class="gallery-item">
+            <img src="photos/coffee4.jpg" alt="Coffee 3">
+            <p>Cappuccino</p>
+        </div>
+    </div>
+    <button>Read More</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritesh Cafe - Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add styles for the navigation bar */
+        nav {
+            background-color: transparent;
+            overflow: hidden;
+            color: black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        nav .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black; /* Set default font color to black */
+            text-align: center;
+            padding: 14px 25px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: yellow; /* Change font color to yellow on hover */
+        }
+
+        /* Styles for the contact section */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .contact-content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .contact-content form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-content form label {
+            margin-top: 10px;
+        }
+
+        .contact-content form input,
+        .contact-content form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-content form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .contact-content form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="photos/cafelogo.jpeg" alt="Cafe Logo">
+        <h1>Ritesh Cafe</h1>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="contact-content">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Please fill out the form below to send us your feedback or to make a reservation.</p>
+    <p>Alternatively, you can contact us directly:</p>
+    <ul>
+        <li><strong>Phone:</strong> +91 7995822719</li>
+        <li><strong>Email:</strong> info@riteshcafe.com</li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/riteshcafe/" target="_blank">@riteshcafe</a></li>
+    </ul>
+    <form action="submit_feedback.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

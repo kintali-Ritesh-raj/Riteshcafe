@@ -1,0 +1,233 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Page-specific styles */
+.home-content,
+.about-content,
+.menu-content,
+.reservation-content,
+.contact-content {
+    padding: 20px;
+    text-align: center;
+}
+/* Add styles for the navigation bar */
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.home {
+    background: #F3F3F3;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0 4px 14.6px;
+    width: 167px;
+    box-sizing: border-box;
+  }
+  .about {
+    background: #F3F3F3;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0 4px 18.7px;
+    width: 167px;
+    box-sizing: border-box;
+  }
+  .menu {
+    background: #F3F3F3;
+    position: absolute;
+    right: 313.9px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0 4px 9.2px;
+    width: 180px;
+    box-sizing: border-box;
+  }
+  .reservation {
+    position: absolute;
+    right: 155.5px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px 0 4px 0;
+    width: 207.4px;
+    box-sizing: border-box;
+  }
+  .contact {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px 0 4px 0;
+    width: 146.9px;
+    box-sizing: border-box;
+  }
+  .navbar {
+    position: relative;
+    margin: 36px 0 17px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 820.9px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .home-1 {
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .hashtag-caff {
+    overflow-wrap: break-word;
+    font-family: 'Limelight';
+    font-weight: 400;
+    font-size: 40px;
+    color: #000000;
+  }
+  .shop-name {
+    background: #F2F2F2;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 25px 0.6px 17px 0;
+    width: 408px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .image-1 {
+    background: url('https://fn12.com/api/clusters/cluster-fn12-prod-asia-southeast1/projects/KoNcWFC7fmX6gQshhdGL3F/assets/images/2b404c9996bb267fb70a1a289549b926570c470a?Expires=1712221292&KeyName=fn12-cdn&Signature=PhJaClHThXHseg6pXmY5Epn1uYc=') 50% / cover no-repeat;
+    width: 1920px;
+    height: 958px;
+  }
+  .container {
+    background: #F3F3F3;
+    position: relative;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 28px 154.1px 0 42px;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .container-2 {
+    display: flex;
+    flex-direction: row;
+    width: 334px;
+    box-sizing: border-box;
+  }
+  .home-3 {
+    overflow-wrap: break-word;
+    font-family: 'Limelight';
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+  }
+  .home-5 {
+    overflow-wrap: break-word;
+    font-family: 'Limelight';
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+  }
+  .home-7 {
+    overflow-wrap: break-word;
+    font-family: 'Limelight';
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+  }
+  .rectangle-28 {
+    background: #F3F3F3;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 167px;
+    height: 38px;
+  }
+  .home-9 {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Limelight';
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+  }
+  .rectangle-210 {
+    background: #F3F3F3;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 139px;
+    height: 38px;
+  }
+  .home-11 {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Limelight';
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+  }
+nav .logo {
+  display: inline-block;
+  position: absolute; /* Position the logo */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+}
+
+nav .logo img {
+  height: 50px; /* Adjust the height as needed */
+}
+
+nav .logo h1 {
+  display: inline-block;
+  margin-left: 10px; /* Adjust margin as needed */
+  font-size: 24px; /* Adjust font size as needed */
+}

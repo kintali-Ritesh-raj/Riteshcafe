@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Hashtag - Menu</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add styles for the navigation bar */
+        /* Add styles for the navigation bar */
+/* Add styles for the navigation bar */
+nav {
+    background-color: transparent;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+nav .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    color: black; /* Set default font color to black */
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: yellow; /* Change font color to yellow on hover */
+}
+
+
+
+        /* Styles for the menu items */
+        .menu-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            max-height: 200px; /* Adjust this value as needed */
+            object-fit: cover; /* Ensures the image covers the area without stretching */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        /* Quick review overlay styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .overlay-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+        }
+
+        .overlay-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 8px;
+        }
+
+        .overlay-content p {
+            margin-top: 10px;
+        }
+
+        .overlay-content .buy-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .overlay-content .buy-button:hover {
+            background-color:transparent;
+        }
+
+        /* Cart styles */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .cart-items {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .cart:hover .cart-items {
+            display: block;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px; /* Added margin for better spacing */
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px; /* Added margin for better spacing */
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            display: none;
+            color: green;
+            margin-top: 20px;
+        }
+        .menu-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-item img {
+            width: 100%;
+            max-height: 200px; /* Adjust this value as needed */
+            object-fit: cover; /* Ensures the image covers the area without stretching */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .overlay-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+        }
+
+        .overlay-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 8px;
+        }
+
+        .overlay-content p {
+            margin-top: 10px;
+        }
+
+        .overlay-content .buy-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .overlay-content .buy-button:hover {
+            background-color:transparent;
+        }
+
+        /* Cart styles */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .cart-items {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .cart:hover .cart-items {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <img src="photos/cafelogo.jpeg" alt="Cafe Logo">
+        <h1>Ritesh Cafe</h1>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="contact.html">Contact</a>
+    <div class="cart" onclick="toggleCart()">
+        Cart <span class="cart-count">0</span>
+        <div class="cart-items">
+            Your cart is empty.
+        </div>
+    </div> 
+</nav>
+<div class="menu-content">
+    <div class="menu-item">
+        <img src="photos/Latte_Macchiato.gif" alt="Latte Macchiato" onclick="showQuickReview('Latte Macchiato', 'A delicious latte with a hint of macchiato.', 'photos/Latte_Macchiato.gif', 3.99)">
+        <p>Latte Macchiato - $3.99</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/Cappuccino11.gif" alt="Cappuccino" onclick="showQuickReview('Cappuccino', 'A classic Italian coffee made with espresso and steamed milk.', 'photos/Cappuccino11.gif', 3.49)">
+        <p>Cappuccino - $3.49</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/Vanilla Latte.webp" alt="Vanilla Latte" onclick="showQuickReview('Vanilla Latte', 'A creamy latte flavored with vanilla syrup.', 'photos/Vanilla Latte.webp', 4.49)">
+        <p>Vanilla Latte - $4.49</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/ristretto.png" alt="Ristretto" onclick="showQuickReview('Ristretto', 'A short, strong shot of espresso with a rich flavor.', 'photos/ristretto.png', 2.99)">
+        <p>Ristretto - $2.99</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/coffeeChocolateChipCookies.gif" alt="Coffee Chocolate Chip Cookies" onclick="showQuickReview('Coffee Chocolate Chip Cookies', 'Homemade cookies with a perfect blend of coffee and chocolate chips.', 'photos/coffeeChocolateChipCookies.gif', 1.99)">
+        <p>Coffee Chocolate Chip Cookies - $1.99</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/affogatoCoffee.png" alt="Affogato Coffee" onclick="showQuickReview('Affogato Coffee', 'A delightful dessert made with a scoop of vanilla ice cream topped with a shot of espresso.', 'photos/affogatoCoffee.png', 5.99)">
+        <p>Affogato Coffee - $5.99</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/walnutCake.png" alt="Walnut Cake" onclick="showQuickReview('Walnut Cake', 'A moist and delicious cake filled with walnuts and topped with creamy frosting.', 'photos/walnutCake.png', 5.49)">
+        <p>Walnut Cake - $5.49</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/italianRumCakes.png" alt="Italian Rum Cakes" onclick="showQuickReview('Italian Rum Cakes', 'Traditional Italian cakes soaked in rum syrup and filled with creamy custard.', 'photos/classicPizzelle.png', 6.99)">
+        <p>Italian Rum Cakes - $6.99</p>
+        
+    </div>
+    <div class="menu-item">
+        <img src="photos/classicPizzelle.png" alt="Classic Pizzelle" onclick="showQuickReview('Classic Pizzelle', 'Thin, crispy Italian waffle cookies with a delicate vanilla flavor.', 'photos/classicPizzelle.png', 3.79)">
+        <p>Classic Pizzelle - $3.79</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/Strawberry Ice Cream.webp" alt="Strawberry Ice Cream Dessert" onclick="showQuickReview('Strawberry Ice Cream Dessert', 'Refreshing strawberry ice cream served with fresh berries and whipped cream.', 'photos/Strawberry Ice Cream.webp', 4.99)">
+        <p>Strawberry Ice Cream Dessert - $4.99</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/doppio.png" alt="doppio" onclick="showQuickReview('doppio', 'Creamy doppio available in various flavors including chocolate, vanilla, and strawberry.', 'photos/doppio.png', 3.99)">
+        <p>Milkshake - $3.99</p>
+    </div>
+    <div class="menu-item">
+        <img src="photos/Frozen Oreo Dessert.jpeg" alt="Frozen Oreo Dessert" onclick="showQuickReview('Frozen Oreo Dessert', 'Irresistible Oreo dessert made with crushed cookies, cream, and chocolate.', 'photos/Frozen Oreo Dessert.jpeg', 4.49)">
+        <p>Frozen Oreo Dessert - $4.49</p>
+    </div>
+</div>
+
+
+<!-- Quick review overlay -->
+<div class="overlay" id="overlay">
+    <div class="overlay-content">
+        <img id="quickReviewImage" src="" alt="">
+        <p id="quickReviewDescription"></p>
+        <p id="quickReviewPrice"></p>
+        <button class="buy-button" onclick="addToCart()">Buy Now</button>
+    </div>
+</div>
+<div class="overlay" id="overlay">
+    <div class="overlay-content">
+        <img id="quickReviewImage" src="" alt="">
+        <p id="quickReviewDescription"></p>
+        <p id="quickReviewPrice"></p>
+        <button class="buy-button" onclick="addToCart()">Buy Now</button>
+    </div>
+</div>
+
+<script>
+    var cartItems = [];
+
+    function showQuickReview(name, description, imageUrl, price) {
+        document.getElementById('quickReviewImage').src = imageUrl;
+        document.getElementById('quickReviewDescription').innerText = description;
+        document.getElementById('quickReviewPrice').innerText = `Price: $${price.toFixed(2)}`;
+        document.getElementById('overlay').setAttribute('data-name', name);
+        document.getElementById('overlay').setAttribute('data-price', price);
+        document.getElementById('overlay').style.display = 'flex';
+    }
+
+    document.getElementById('overlay').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+    function addToCart() {
+        var itemName = document.getElementById('overlay').getAttribute('data-name');
+        var itemPrice = parseFloat(document.getElementById('overlay').getAttribute('data-price'));
+        cartItems.push({ name: itemName, price: itemPrice });
+        updateCartCount();
+        alert(`${itemName} added to cart!`);
+    }
+
+    function updateCartCount() {
+        var cartCount = document.querySelector('.cart-count');
+        cartCount.textContent = cartItems.length;
+
+        var cartItemsContainer = document.querySelector('.cart-items');
+        if (cartItems.length === 0) {
+            cartItemsContainer.textContent = 'Your cart is empty.';
+        } else {
+            var itemsList = cartItems.map(function(item) {
+                return `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+            }).join('');
+            var totalPrice = cartItems.reduce(function(total, item) {
+                return total + item.price;
+            }, 0);
+            cartItemsContainer.innerHTML = `<ul>${itemsList}</ul><p>Total: $${totalPrice.toFixed(2)}</p>`;
+        }
+    }
+
+    function toggleCart() {
+        var cartItemsContainer = document.querySelector('.cart-items');
+        if (cartItemsContainer.style.display === 'block') {
+            cartItemsContainer.style.display = 'none';
+        } else {
+            cartItemsContainer.style.display = 'block';
+        }
+    }
+
+    // Function to check if the input is a non-negative integer
+    function isNonNegativeInteger(input) {
+        return /^\d+$/.test(input);
+    }
+
+    // Get the input element
+    var inputElement = document.querySelector('.menu-content');
+
+    // Add event listener for click event
+    inputElement.addEventListener('click', function(event) {
+        // Check if the clicked element is a link
+        if (event.target.tagName === 'A') {
+            // Get the href attribute of the clicked link
+            var href = event.target.getAttribute('href');
+
+            // Check if the href attribute is a non-negative integer
+            if (!isNonNegativeInteger(href)) {
+                // If not a non-negative integer, prevent the default behavior
+                event.preventDefault();
+                // Display error message
+                alert('All the characters are repetitive');
+            }
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

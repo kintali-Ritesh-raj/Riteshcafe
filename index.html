@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritesh Cafe - About Us</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add styles for the navigation bar */
+        nav {
+            background-color: transparent;
+            overflow: hidden;
+            color: black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        nav .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black; /* Set default font color to black */
+            text-align: center;
+            padding: 14px 25px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: yellow; /* Change font color to yellow on hover */
+        }
+
+        /* Styles for the about section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .about-content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-content button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .about-content button:hover {
+            background-color: #555;
+        }
+
+        .about-content .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .about-content .gallery-item {
+            flex-basis: calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .about-content .gallery-item img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about-content .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-content .gallery-item p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="photos/cafelogo.jpeg" alt="Cafe Logo">
+        <h1>Ritesh Cafe</h1>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="contact.html">Contact</a>
+    <!-- Add the cart here -->
+</nav>
+
+<div class="about-content">
+    <h1>Ritesh Cafe</h1>
+    <p>Welcome to Ritesh Cafe, where we believe in the power of great coffee and the importance of community. Our mission is to provide a cozy and inviting atmosphere where you can enjoy high-quality coffee and delicious pastries, all while connecting with friends and family.</p>
+    
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="photos/Cafe Interior.jpeg" alt="Cafe Interior">
+            <p>Our cozy interior</p>
+        </div>
+        <div class="gallery-item">
+            <img src="photos/cafe-food.jpeg" alt="Cafe Food">
+            <p>Delicious pastries</p>
+        </div>
+        <div class="gallery-item">
+            <img src="photos/cafe-staff.jpeg" alt="Cafe Staff">
+            <p>Our friendly staff</p>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+    <button>Learn More</button>
+</div>
+
+</body>
+</html>
